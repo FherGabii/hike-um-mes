@@ -1,4 +1,10 @@
 
+Template.Post.onCreated(function() {
+   Meteor.subscribe("comentarios", this.data._id); 
+});
+
+Meteor.subscribe("posts");
+Meteor.subscribe("usuarios");
 Template.Feed.helpers({
 	posts: function() {
 		var postsDaCollection = Posts.find().fetch().reverse();
