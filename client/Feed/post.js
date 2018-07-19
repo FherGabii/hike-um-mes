@@ -20,6 +20,12 @@ Template.Post.helpers({
 // só um = significa que quer colocar a coisa que tá do lado direito, no lado esquerdo
 			return true;
 		}
+	},
+	comentarios: function() {
+		return Comentarios.find({post: this._id}).fetch();
+		//estamos olhando pro atributo post e o valor que ele tem é o id
+		// todas nossas características estão em this. 
+		//fetch serve para entregar os comentários de volta pra gente
 	}
 });
 

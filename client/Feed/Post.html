@@ -13,6 +13,10 @@
       		{{/if}}
       		
       		<div>{{numeroDeCurtidas}} Curtidas</div>
+          {{#each comentarios}}
+            {{> Comentario}}
+          {{/each}}
+          {{> NovoComentario}}
     	</div>
  	 </div>
 
