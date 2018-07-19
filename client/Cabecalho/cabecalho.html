@@ -23,10 +23,15 @@
           {{#if currentUser}}
             <li><a href="/feed">Feed</a></li>
           {{/if}}  
-          
+        </ul> 
+
+        {{> Pesquisa}}
+
+        <ul class="nav navbar-nav navbar-right">
           <li>{{> atNavButton}}</li>
-        </ul>        
-      </div><!-- /.navbar-collapse -->
+        </ul>
+      </div>
+      
     </div><!-- /.container-fluid -->
   </nav>
 </template>
