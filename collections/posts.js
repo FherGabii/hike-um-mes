@@ -1,7 +1,7 @@
 Posts = new Mongo.Collection("posts");
 
 Meteor.methods({
-	"inserirPost": function(textoDoFormulario) {
+	"inserirPost": function(textoDoFormulario, urlDaImagem) {
 		if(Meteor.userId() !==null && textoDoFormulario)  {
 			// && serve para checar mais de uma condição
 			// No caso queremos checar se o texto tá vazio ou não, por incrível que pareça, 
@@ -9,7 +9,8 @@ Meteor.methods({
 			Posts.insert({
 				texto: textoDoFormulario,
 				idDoAutor: Meteor.userId(),
-				curtidas: [] //isso cria uma lista vazia
+				curtidas: [], //isso cria uma lista vazia
+				imagem: urlDaImagem
 			});
 		}
 	

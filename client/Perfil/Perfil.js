@@ -8,7 +8,7 @@ Template.Perfil.helpers({
     //a partir daqui, é pra mostrar só os posts do usuário com o id que pedimos
     posts: function() {
         var idDoUsuario = FlowRouter.getParam("id");
-        var postsDoPerfil = Posts.find({idDoAutor: idDoUsuario}).fetch().reverse;
+        var postsDoPerfil = Posts.find({idDoAutor: idDoUsuario}).fetch().reverse();
         //reverse para posts mais novos no top, porque é o reverso do que tá aparecendo lá
         return postsDoPerfil;
     },
