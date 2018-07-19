@@ -2,7 +2,10 @@ Posts = new Mongo.Collection("posts");
 
 Meteor.methods({
 	"inserirPost": function(textoDoFormulario) {
-		if(Meteor.userId() !==null)  {
+		if(Meteor.userId() !==null && textoDoFormulario)  {
+			// && serve para checar mais de uma condição
+			// No caso queremos checar se o texto tá vazio ou não, por incrível que pareça, 
+			// isso funciona
 			Posts.insert({
 				texto: textoDoFormulario,
 				idDoAutor: Meteor.userId(),
