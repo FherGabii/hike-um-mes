@@ -27,3 +27,5 @@ useraccounts:flow-routing
 accounts-password
 softwarerero:accounts-t9n
 sergeyt:typeahead
+cfs:standard-packages
+cfs:gridfs
