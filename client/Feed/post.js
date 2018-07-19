@@ -26,7 +26,13 @@ Template.Post.helpers({
 		//estamos olhando pro atributo post e o valor que ele tem é o id
 		// todas nossas características estão em this. 
 		//fetch serve para entregar os comentários de volta pra gente
-	}
+	},
+	eAutor: function() {
+        var idDoAutor = this.idDoAutor;
+        return idDoAutor === Meteor.userId();
+    }
+
+
 });
 
 Template.Post.events({
@@ -39,6 +45,11 @@ Template.Post.events({
 	},
 	"click .botao-descurtir": function(evento, template) {
         Meteor.call("descurtirPost", template.data._id);     
+    },
+    "click .botao-remover": function(evento, template) {
+        Meteor.call("removerPost", template.data._id);
+
     }
+
 
 });
